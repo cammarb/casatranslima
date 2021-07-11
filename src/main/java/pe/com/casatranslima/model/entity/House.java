@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 
 @Entity
 @Table(name = "houses")
@@ -31,17 +30,21 @@ public class House {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "spaces_available")
+    private Long spaces_available;
+
     public House() {
 
     }
 
-    public House(String name, String address, String district, String admin, @Min(9) String phone) {
+    public House(String name, String address, String district, String admin, String phone, Long spaces_available) {
         super();
         this.name = name;
         this.address = address;
         this.district = district;
         this.admin = admin;
         this.phone = phone;
+        this.spaces_available = spaces_available;
     }
 
     public Long getId() {
@@ -91,5 +94,10 @@ public class House {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
+    public Long getSpaces_available() {
+        return spaces_available;
+    }
+    public void setSpaces_available(Long spaces_available) {
+        this.spaces_available = spaces_available;
+    }
 }
