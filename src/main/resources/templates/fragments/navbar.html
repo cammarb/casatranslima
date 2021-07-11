@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments/head.html :: headerfiles">
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-light bg-body rounded sticky-top shadow-sm px-5" th:fragment="navbar">
+        <div class="container-fluid mx-4">
+            <!-- ICON -->
+            <div class="">
+                <a class="navbar-brand" th:href="@{/}">
+                    <img th:src="@{../../img/casatrans_logo.png}" alt="" width="100vh" height="auto">
+                </a>
+            </div>
+            <!-- HAMBURGUER MENU -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- MENU ITEMS -->
+            <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- ABOUT US DROPDOWN -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Abous Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" th:href="@{https://presente.pe/}">Presente</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{https://presente.pe/casatrans/}">Casa Trans Lima
+                                    Este</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a sec:authorize="isAuthenticated()" class="nav-link" aria-current="page"
+                            th:href="@{/houses}">Register Home</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">Look for a home</a>
+                    </li>
+                    <li>
+                        <!-- SEARCH -->
+                        <form class="d-flex">
+                            <input class="form-control me-2 rounded-2" type="search" placeholder="Search by location"
+                                aria-label="Search">
+                            <button class="btn btn-outline-info white-font-hover rounded-2"
+                                type="submit">Search</button>
+                        </form>
+                    </li>
+
+                </ul>
+                <!-- LOGIN AND SIGN UP -->
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item me-4">
+                        <a sec:authorize="isAnonymous()" class="nav-link login-btn px-3" th:href="@{/login}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="isAnonymous()" class="nav-link register-btn px-3"
+                            th:href="@{/registration}">Register</a>
+                    </li>
+
+                    <!-- LOG OUT -->
+                    <li class="nav-item">
+                        <a sec:authorize="isAuthenticated()" class="nav-link register-btn px-3" th:href="@{/logout}">Log
+                            Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SCRIPTS -->
+    <div th:insert="fragments/scripts.html :: scripts"></div>
+</body>
+
+</html>

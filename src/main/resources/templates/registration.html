@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments/head.html :: headerfiles"></head>
+
+<body>
+
+    <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="align-self-center text-center">
+
+                <div th:if="${param.success}">
+                    <div class="alert alert-info">You've successfully registered!</div>
+                </div>
+
+                <form class="registration_form" th:action="@{/registration}" method="post" th:object="${user}">
+
+                    <h1 class="h3 mb-5 fw-normal">Registration</h1>
+
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="John" required
+                            autofocus="autofocus" th:field="*{firstName}" />
+                        <label for="floatingInput">First name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Doe" required
+                            autofocus="autofocus" th:field="*{lastName}" />
+                        <label for=" floatingInput">Last name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            required autofocus="autofocus" th:field="*{email}" />
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-5">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Strong password"
+                            required autofocus="autofocus" th:field="*{password}" />
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                    <span>Already registered? <a href="/" th:href="@{/login}">Login
+                            here</a></span>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div th:insert="fragments/scripts.html :: scripts">
+
+</body>
+
+</html>

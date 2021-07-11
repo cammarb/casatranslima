@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:insert="fragments/head.html :: headerfiles"></head>
+
+<body>
+    <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+
+                <div class="row">
+                    <h2 class="pg_title pb-4">House <span th:text="${house.name}"></span></h2>
+                </div>
+
+                <div class="card mb-3 text-center shadow border-0 rounded-3" style="width: 500px;">
+                    <img class="card-img-top mx-auto pt-3" th:src="@{/../img/transFlag_icon.png}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Id: <span th:text="${house.id}"></span>
+                        </h5>
+                        <h5 class="card-text">
+                            District: <span th:text="${house.district}"></span>
+                        </h5>
+                        <h5 class="card-text">
+                            Home Address: <span th:text="${house.address}"></span>
+                        </h5>
+                        <h5 class="card-text">
+                            Administrator's name: <span th:text="${house.admin}"></span>
+                        </h5>
+                        <h5 class="card-text">
+                            Telephone: <span th:text="${house.phone}"></span>
+                        </h5>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="pt-3">
+                    <a th:href="@{/houses}" class="btn og_btn" style="width: 500px;"> <i
+                            class="fas fa-angle-double-left"></i>
+                        Return
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <div th:insert="fragments/scripts.html :: scripts">
+</body>
+
+</html>

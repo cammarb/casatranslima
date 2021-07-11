@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Sans:wght@400;700&display=swap');
+:root {
+  --main-bg-color: white !important;
+  --primary-color: #55cdfc !important; /* Maya Blue */
+  --secondary-color: #f7a8b8 !important; /* Amaranth Pink */
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Sans JP', sans-serif !important;
+  color: var(--primary-color) !important;
+}
+
+.navbar-light .navbar-toggler {
+  border: none !important;
+}
+
+a {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+/* SEARCH BUTTON */
+.white-font-hover {
+  border: solid 2px;
+  font-weight: 500;
+}
+.white-font-hover:hover {
+  color: white;
+}
+
+/* REGISTER AND LOGIN BUTTONS */
+.register-btn {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  color: white !important;
+  font-weight: 700 !important;
+}
+.register-btn:hover {
+  background-color: #da9daa;
+}
+
+.login-btn {
+  color: var(--primary-color) !important;
+  font-weight: 700 !important;
+}
+
+/* LOGIN PAGE */
+.login_img {
+  width: inherit;
+}
+.login_form {
+  width: inherit;
+  max-width: 500px;
+}
