@@ -57,3 +57,9 @@ a {
   width: inherit;
   max-width: 500px;
 }
+
+/* HOUSE BUTTON */
+.lightBlue_btn{
+  background-color: var(--primary-color);
+  color: white;
+}

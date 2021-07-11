@@ -15,7 +15,7 @@
 
             <div class="col">
                 <!-- NEW -->
-                <a th:href="@{'/houses/new'}" class="btn og_btn"> <i class="fas fa-plus"></i> New
+                <a th:href="@{'/houses/new'}" class="btn lightBlue_btn"> New <i data-feather="plus"></i>
                 </a>
             </div>
         </div>
@@ -39,15 +39,15 @@
                             </h5>
                             <br>
                             <!-- VIEW -->
-                            <a th:href="@{'/houses/' + ${house.id} + '/viewHouse'}" class="btn edit_btn search mx-3">
-                                <i class="fas fa-search"></i></a>
+                            <a th:href="@{'/houses/' + ${house.id} + '/viewHouse'}" class="btn btn-primary">
+                                <i data-feather="info"></i></a>
                             <!-- EDIT -->
-                            <a th:href="@{'/houses/' + ${house.id} + '/editHouse'}" class="btn edit_btn pencil mx-3">
-                                <i class="fas fa-pencil-alt"></i>
+                            <a th:href="@{'/houses/' + ${house.id} + '/editHouse'}" class="btn btn-secondary">
+                                <i data-feather="edit"></i>
                             </a>
                             <!-- DELETE -->
-                            <a th:href="@{'/houses/' + ${house.id} + '/deleteHouse'}" class="btn btn-danger mx-3"> <i
-                                    class="fas fa-trash-alt"></i>
+                            <a th:href="@{'/houses/' + ${house.id} + '/deleteHouse'}" class="btn btn-danger"> <i
+                                    data-feather="delete"></i>
                             </a>
                         </div>
                     </div>
