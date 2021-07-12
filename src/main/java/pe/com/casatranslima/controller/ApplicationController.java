@@ -33,26 +33,24 @@ public class ApplicationController {
             List<House> houses = houseService.getAll();
             model.addAttribute("houses", houses);
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
             System.err.println(e.getMessage());
         }
         return "applications/listAllHouses";
     }
 
-    // Create an application 
+    // Create an applicationn 
     @GetMapping("new/{id}")
     public String newApplication(Model model, @PathVariable("id") Long id){
         try {
             Optional<House> optional = houseService.findById(id);
             if(optional.isPresent()){
-                Application application = new Application();
-                model.addAttribute("applicationNew", application);
+                Application applicationn = new Application();
+                model.addAttribute("applicationNew", applicationn);
                 return "applications/newApplication";
             }
             
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
 			System.err.println(e.getMessage());
         }
@@ -61,13 +59,12 @@ public class ApplicationController {
 
     // Save Application
     @PostMapping("savenew")
-	public String saveNew(Model model, @ModelAttribute("applicationNew") Application application) {
+	public String saveNew(Model model, @ModelAttribute("applicationNew") Application applicationn) {
 		try {
 			// reservation.setPrice(studioaux);
-			Application applicationReturn = applicationService.create(application);
-			model.addAttribute("application", applicationReturn);
+			Application applicationReturn = applicationService.create(applicationn);
+			model.addAttribute("applicationn", applicationReturn);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}

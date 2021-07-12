@@ -1,10 +1,14 @@
 package pe.com.casatranslima.model.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +36,17 @@ public class House {
 
     @Column(name = "spaces_available")
     private Long spaces_available;
+
+    @OneToMany(mappedBy = "house", cascade = CascadeType.REMOVE)
+	private List<Application> applications;
+
+    public List<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<Application> applications) {
+        this.applications = applications;
+    }
 
     public House() {
 

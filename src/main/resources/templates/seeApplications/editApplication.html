@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head th:insert="fragments/head.html :: headerfiles"></head>
+
+  <body>
+    <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
+
+    <div class="container">
+      <div class="card-body">
+        <form
+          th:action="@{/applications/save}"
+          th:object="${applicationNew}"
+          method="post"
+        >
+          <div class="mb-3">
+            <label for="applicant_dni" class="form-label"
+              >DNI (Documento Nacional de Identidad)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              th:field="*{applicant_dni}"
+              placeholder="DNI"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="applicant_name_dni" class="form-label"
+              >Name displayed in your ID</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="John Doe"
+              th:field="*{applicant_name_dni}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="applicant_age" class="form-label">Your age</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="John Doe"
+              th:field="*{applicant_age}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="applicant_name" class="form-label">Your name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="John Doe"
+              th:field="*{applicant_name}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="applicant_email" class="form-label">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="user@email.com"
+              th:field="*{applicant_email}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="applicant_phone" class="form-label">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="123 456 789"
+              th:field="*{applicant_phone}"
+            />
+          </div>
+
+          <div class="mb-3"></div>
+          <button type="submit" class="btn og_btn">Save</button>
+        </form>
+
+        <br />
+        <a th:href="@{/applications}" class="btn og_btn">
+          <i class="fas fa-angle-double-left"></i> Return
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

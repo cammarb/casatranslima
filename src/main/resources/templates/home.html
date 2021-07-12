@@ -10,8 +10,11 @@
         <h1>
             Welcome, <span sec:authentication="principal.username"></span>
         </h1>
-
-        <img th:src="@{../../img/pride.png}" alt="">
+        <div class="row">
+            <div class="col">
+                <img th:src="@{../../img/pride.png}" alt="" style="max-height: 50vh; width: auto;">
+            </div>
+        </div>
     </div>
 
     <div th:insert="fragments/scripts.html :: scripts">

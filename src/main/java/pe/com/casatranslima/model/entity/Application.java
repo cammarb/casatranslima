@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,19 +38,48 @@ public class Application {
     @Column(name = "status", nullable = true)
     private String status;
 
+    @ManyToOne
+	@JoinColumn(name = "house_id")
+	private House house;
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
     public Application() {
     }
 
-    public Application(String applicant_dni, String applicant_name, Integer applicant_age, String applicant_email,
-            String applicant_phone, String status) {
+    
+
+    public Application(String applicant_dni, String applicant_name_dni, String applicant_name, Integer applicant_age,
+            String applicant_email, String applicant_phone, String status) {
                 super();
         this.applicant_dni = applicant_dni;
+        this.applicant_name_dni = applicant_name_dni;
         this.applicant_name = applicant_name;
         this.applicant_age = applicant_age;
         this.applicant_email = applicant_email;
         this.applicant_phone = applicant_phone;
         this.status = status;
     }
+
+
+
+    public String getApplicant_name_dni() {
+        return applicant_name_dni;
+    }
+
+
+
+    public void setApplicant_name_dni(String applicant_name_dni) {
+        this.applicant_name_dni = applicant_name_dni;
+    }
+
+
 
     public Long getId() {
         return id;

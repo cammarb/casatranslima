@@ -41,6 +41,10 @@
                             th:href="@{/houses}">Register Home</a>
                     </li>
                     <li class="nav-item me-3">
+                        <a sec:authorize="isAuthenticated()" class="nav-link" aria-current="page"
+                            th:href="@{/seeApplications}">View applications</a>
+                    </li>
+                    <li class="nav-item me-3">
                         <a class="nav-link" th:href="@{'/applications'}">Look for a home</a>
                     </li>
                     <li>
@@ -64,7 +68,9 @@
                     <li class="nav-item">
                         <a sec:authorize="isAnonymous()" class="nav-link login-btn px-3" th:href="@{/login}">Login <i data-feather="log-in"></i></a>
                     </li>
-                  
+                    <li class="nav-item">
+                       <p sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="principal.username"></span></p> 
+                    </li>
 
                     <!-- LOG OUT -->
                     <li class="nav-item">
