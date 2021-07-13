@@ -21,6 +21,8 @@ import pe.com.casatranslima.service.crud.HouseService;
 @RequestMapping("/applications")
 public class ApplicationController {
 
+    House houseName;
+
     @Autowired
     private HouseService houseService;
 
@@ -46,6 +48,7 @@ public class ApplicationController {
             Optional<House> optional = houseService.findById(id);
             if(optional.isPresent()){
                 Application applicationn = new Application();
+                houseName = optional.get();
                 model.addAttribute("applicationNew", applicationn);
                 return "applications/newApplication";
             }
@@ -61,7 +64,7 @@ public class ApplicationController {
     @PostMapping("savenew")
 	public String saveNew(Model model, @ModelAttribute("applicationNew") Application applicationn) {
 		try {
-			// reservation.setPrice(studioaux);
+            applicationn.setHouse_name(houseName);
 			Application applicationReturn = applicationService.create(applicationn);
 			model.addAttribute("applicationn", applicationReturn);
 		} catch (Exception e) {

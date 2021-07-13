@@ -42,13 +42,8 @@ public class Application {
 	@JoinColumn(name = "house_id")
 	private House house;
 
-    public House getHouse() {
-        return house;
-    }
-
-    public void setHouse(House house) {
-        this.house = house;
-    }
+    @Column(name = "house_name")
+	private String house_name;
 
     public Application() {
     }
@@ -56,7 +51,7 @@ public class Application {
     
 
     public Application(String applicant_dni, String applicant_name_dni, String applicant_name, Integer applicant_age,
-            String applicant_email, String applicant_phone, String status) {
+            String applicant_email, String applicant_phone, String status, String house_name) {
                 super();
         this.applicant_dni = applicant_dni;
         this.applicant_name_dni = applicant_name_dni;
@@ -65,6 +60,7 @@ public class Application {
         this.applicant_email = applicant_email;
         this.applicant_phone = applicant_phone;
         this.status = status;
+        this.house_name = house_name;
     }
 
 
@@ -135,4 +131,16 @@ public class Application {
     public void setStatus(String status) {
         this.status = status;
     }
+    public String getHouse_name() {
+        return house_name;
+    }
+
+    public void setHouse_name(String house_name) {
+        this.house_name = house_name;
+    }
+
+    public void setHouse_name(House house) {
+        house_name = house.getName();
+    }
+
 }

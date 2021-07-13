@@ -6,7 +6,7 @@
 <body>
     <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
     
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-6">
 
@@ -15,23 +15,28 @@
                 </div>
 
                 <div class="card-body">
-
+                   
                     <form th:action="@{/applications/savenew}"
                         th:object="${applicationNew}" method="post">
-
+                     
                         <div class="mb-3">
                             <label for="applicant_dni" class="form-label">DNI (Documento Nacional de Identidad)</label> <input
                                 type="text" class="form-control" th:field="*{applicant_dni}"
                                 placeholder="DNI" autofocus>
                         </div>
                         <div class="mb-3">
-                            <label for="applicant_name_dni" class="form-label">Name displayed in your ID</label> <input type="text" class="form-control"
+                            <label for="applicant_name_dni" class="form-label">Name displayed in your ID 
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i data-feather="info"></i>
+                                </button> 
+                            </label> 
+                            <input type="text" class="form-control"
                             placeholder="John Doe" th:field="*{applicant_name_dni}">
                         </div>
 
                         <div class="mb-3">
                             <label for="applicant_age" class="form-label">Your age</label> <input type="number" class="form-control"
-                            placeholder="John Doe" th:field="*{applicant_age}">
+                            placeholder="e.g: 18" th:field="*{applicant_age}">
                         </div>
 
                         <div class="mb-3">
@@ -56,6 +61,21 @@
                     <br> <a th:href="@{/applications}" class="btn og_btn"> <i
                         class="fas fa-angle-double-left"></i> Return
                     </a>
+                </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Disclaimer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            This is confidential information. The name displayed on your ID will not be shared with anyone, and is asked only for your safety.
+                        </div>
+                    </div>
+                    </div>
                 </div>
 
             </div>
