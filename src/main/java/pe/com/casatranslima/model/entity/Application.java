@@ -17,22 +17,22 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "applicant_dni")
+    @Column(name = "applicant_dni", nullable = false)
     private String applicant_dni;
 
-    @Column(name = "applicant_name_dni")
+    @Column(name = "applicant_name_dni", nullable = false)
     private String applicant_name_dni;
 
-    @Column(name = "applicant_name")
+    @Column(name = "applicant_name", nullable = false)
     private String applicant_name;
 
-    @Column(name = "applicant_age")
+    @Column(name = "applicant_age", nullable = false)
     private Integer applicant_age;
 
-    @Column(name = "applicant_email")
+    @Column(name = "applicant_email", nullable = false)
     private String applicant_email;
 
-    @Column(name = "applicant_phone")
+    @Column(name = "applicant_phone", nullable = false)
     private String applicant_phone;
 
     @Column(name = "status", nullable = true)
@@ -41,6 +41,16 @@ public class Application {
     @ManyToOne
 	@JoinColumn(name = "house_id")
 	private House house;
+
+    public House getHouse() {
+        return house;
+    }
+
+
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
 
     @Column(name = "house_name")
 	private String house_name;
@@ -63,19 +73,13 @@ public class Application {
         this.house_name = house_name;
     }
 
-
-
     public String getApplicant_name_dni() {
         return applicant_name_dni;
     }
 
-
-
     public void setApplicant_name_dni(String applicant_name_dni) {
         this.applicant_name_dni = applicant_name_dni;
     }
-
-
 
     public Long getId() {
         return id;
@@ -142,5 +146,4 @@ public class Application {
     public void setHouse_name(House house) {
         house_name = house.getName();
     }
-
 }

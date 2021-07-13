@@ -65,6 +65,7 @@ public class ApplicationController {
 	public String saveNew(Model model, @ModelAttribute("applicationNew") Application applicationn) {
 		try {
             applicationn.setHouse_name(houseName);
+            applicationn.setStatus("PENDING");
 			Application applicationReturn = applicationService.create(applicationn);
 			model.addAttribute("applicationn", applicationReturn);
 		} catch (Exception e) {
