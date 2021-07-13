@@ -8,9 +8,12 @@
   <body>
     <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
 
-    <div class="container">
-      <table class="table table-hover">
-        <thead>
+    <div class="container mt-5">
+      <div class="row">
+        <h2 class="pg_title pb-4">Applications</h2>
+      </div>
+      <table class="table table-hover table-bordered align-middle">
+        <thead class="table-danger">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Applicant ID</th>
@@ -21,6 +24,7 @@
             <th scope="col">Phone</th>
             <th scope="col">House</th>
             <th scope="col">Status</th>
+            <th scope="col">Update</th>
           </tr>
         </thead>
         <tbody>
@@ -34,9 +38,12 @@
             <td th:text="${applicationn.applicant_phone}"></td>
             <td th:text="${applicationn.house_name}"></td>
             <td th:text="${applicationn.status}"></td>
+            <td><a th:href="@{'/seeApplications/' + ${applicationn.id} + '/editApplication'}" class="btn btn-secondary">
+              <i data-feather="edit-2"></i></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div th:insert="fragments/scripts.html :: scripts">
   </body>
 </html>

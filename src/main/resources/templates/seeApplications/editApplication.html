@@ -9,11 +9,14 @@
   <body>
     <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
 
-    <div class="container">
+    <div class="container mt-5">
+      <div class="row">
+        <h1>Update</h1>
+      </div>
       <div class="card-body">
         <form
-          th:action="@{/applications/save}"
-          th:object="${applicationNew}"
+          th:action="@{/seeApplications/save}"
+          th:object="${editApplication}"
           method="post"
         >
           <div class="mb-3">
@@ -80,15 +83,24 @@
             />
           </div>
 
+          <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-control" th:field="*{status}">
+              <option th:value="'APPROVED'" th:text="APPROVED"></option>
+              <option th:value="'PENDING'" th:text="PENDING"></option>
+            </select>
+          </div>
+
           <div class="mb-3"></div>
-          <button type="submit" class="btn og_btn">Save</button>
+          <button type="submit" class="btn lightPink_btn">Save</button>
         </form>
 
         <br />
-        <a th:href="@{/applications}" class="btn og_btn">
-          <i class="fas fa-angle-double-left"></i> Return
+        <a th:href="@{/applications}" class="btn lightBlue_btn">
+          <i data-feather="corner-down-left"></i> Return
         </a>
       </div>
     </div>
+    <div th:insert="fragments/scripts.html :: scripts">
   </body>
 </html>

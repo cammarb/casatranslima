@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Sans:wght@400;700&display=swap");
 :root {
   --main-bg-color: white !important;
   --primary-color: #55cdfc !important; /* Maya Blue */
   --secondary-color: #f7a8b8 !important; /* Amaranth Pink */
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 
 h1,
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Noto Sans JP', sans-serif !important;
+  font-family: "Noto Sans JP", sans-serif !important;
   color: var(--primary-color) !important;
 }
 
@@ -21,7 +21,7 @@ h6 {
 }
 
 a {
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 
 /* SEARCH BUTTON */
@@ -59,7 +59,12 @@ a {
 }
 
 /* HOUSE BUTTON */
-.lightBlue_btn{
+.lightBlue_btn {
   background-color: var(--primary-color);
+  color: white;
+}
+
+.lightPink_btn {
+  background-color: var(--secondary-color);
   color: white;
 }
