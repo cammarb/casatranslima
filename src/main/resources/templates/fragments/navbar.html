@@ -38,7 +38,7 @@
                     </li>
                     <li class="nav-item me-3">
                         <a sec:authorize="isAuthenticated()" class="nav-link" aria-current="page"
-                            th:href="@{/houses}">Register Home</a>
+                            th:href="@{/houses}">Manage Houses</a>
                     </li>
                     <li class="nav-item me-3">
                         <a sec:authorize="isAuthenticated()" class="nav-link" aria-current="page"
@@ -46,15 +46,6 @@
                     </li>
                     <li class="nav-item me-3">
                         <a class="nav-link" th:href="@{'/applications'}">Look for a home</a>
-                    </li>
-                    <li>
-                        <!-- SEARCH -->
-                        <form class="d-flex">
-                            <input class="form-control me-2 rounded-2" type="search" placeholder="Search by district"
-                                aria-label="Search">
-                            <button class="btn btn-outline-info white-font-hover rounded-2"
-                                type="submit">Search</button>
-                        </form>
                     </li>
 
                 </ul>
