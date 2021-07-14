@@ -30,10 +30,15 @@ public class ApplicationController {
     private ApplicationService applicationService;
 
     @GetMapping
-    public String listHouses(Model model){
+    public String listHouses(Model model, String keyword){
         try {
             List<House> houses = houseService.getAll();
-            model.addAttribute("houses", houses);
+            if (keyword != null) {
+                model.addAttribute("houses", houseService.findByKeyword(keyword));
+            }
+            else{
+                model.addAttribute("houses", houses);
+            } 
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());

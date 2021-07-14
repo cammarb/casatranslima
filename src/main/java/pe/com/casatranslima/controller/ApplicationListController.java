@@ -25,10 +25,15 @@ public class ApplicationListController {
 
     // LIST APPLICATIONS FOR ADMIN
     @GetMapping
-    public String listApplicationsAdmin(Model model){
+    public String listApplicationsAdmin(Model model, String keyword, String status){
         try {
             List<Application> applications = applicationService.getAll();
+            if (keyword != null) {
+                model.addAttribute("applications", applicationService.findByKeyword(keyword));
+            }
+           else{
             model.addAttribute("applications", applications);
+           }
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());

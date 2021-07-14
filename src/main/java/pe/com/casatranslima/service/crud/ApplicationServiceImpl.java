@@ -1,5 +1,7 @@
 package pe.com.casatranslima.service.crud;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -16,5 +18,9 @@ public class ApplicationServiceImpl implements ApplicationService{
     @Override
     public JpaRepository<Application, Long> getRepository(){
         return applicationRepository;
+    }
+
+    public List<Application> findByKeyword(String keyword){
+        return applicationRepository.findByKeyword(keyword);
     }
 }
