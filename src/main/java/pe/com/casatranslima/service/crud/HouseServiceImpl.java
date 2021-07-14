@@ -21,9 +21,14 @@ public class HouseServiceImpl implements HouseService {
         return houseRepository;
     }
 
-    @Transactional(readOnly = true)
-    @Override
-    public List<House> findByName(String name) throws Exception {
-        return houseRepository.findByName(name);
+    // @Transactional(readOnly = true)
+    // @Override
+    // public List<House> findByName(String name) throws Exception {
+    //     return houseRepository.findByName(name);
+    // }
+
+    public List<House> findByKeyword(String keyword){
+        return houseRepository.findByKeyword(keyword);
     }
+    
 }

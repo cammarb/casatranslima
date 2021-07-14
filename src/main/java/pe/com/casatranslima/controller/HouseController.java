@@ -26,10 +26,15 @@ public class HouseController {
 
     // LIST HOUSES
     @GetMapping
-    public String list(Model model) {
+    public String list(Model model, String keyword) {
         try {
             List<House> houses = houseService.getAll();
-            model.addAttribute("houses", houses);
+            if (keyword != null) {
+                model.addAttribute("houses", houseService.findByKeyword(keyword));
+            }
+            else{
+                model.addAttribute("houses", houses);
+            } 
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -57,7 +62,6 @@ public class HouseController {
         try {
             House houseReturn = houseService.create(house);
             model.addAttribute("house", houseReturn);
-            return "houses/viewHouse";
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
@@ -87,7 +91,6 @@ public class HouseController {
         try {
             House houseReturn = houseService.update(house);
             model.addAttribute("house", houseReturn);
-            return "houses/viewHouse";
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
