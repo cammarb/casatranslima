@@ -50,7 +50,7 @@
                     <li>
                         <!-- SEARCH -->
                         <form class="d-flex">
-                            <input class="form-control me-2 rounded-2" type="search" placeholder="Search by location"
+                            <input class="form-control me-2 rounded-2" type="search" placeholder="Search by district"
                                 aria-label="Search">
                             <button class="btn btn-outline-info white-font-hover rounded-2"
                                 type="submit">Search</button>
@@ -58,20 +58,18 @@
                     </li>
 
                 </ul>
-                <!-- LOGIN AND SIGN UP -->
-
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item me-4">
-                        <a sec:authorize="isAnonymous()" class="nav-link register-btn px-3"
-                            th:href="@{/registration}">Register</a>
-                    </li>
+                <!-- LOGIN-->
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
                     <li class="nav-item">
                         <a sec:authorize="isAnonymous()" class="nav-link login-btn px-3" th:href="@{/login}">Login <i data-feather="log-in"></i></a>
                     </li>
-                    <li class="nav-item">
-                       <p sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="principal.username"></span></p> 
+                    <li class="nav-item me-4">
+                       <p class="mt-2 fw-bolder" sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="principal.username"></span></p> 
                     </li>
-
+                    <li class="nav-item me-4">
+                        <a sec:authorize="isAuthenticated()" class="nav-link login-btn px-3"
+                            th:href="@{/registration}">Register new user</a>
+                    </li>
                     <!-- LOG OUT -->
                     <li class="nav-item">
                         <a sec:authorize="isAuthenticated()" class="nav-link register-btn px-3" th:href="@{/logout}">Log

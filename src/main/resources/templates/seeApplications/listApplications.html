@@ -10,7 +10,8 @@
 
     <div class="container mt-5">
       <div class="row">
-        <h2 class="pg_title pb-4">Applications</h2>
+        <h2 class="pg_title pb-4"><span><img th:src="@{../../img/TRANS_LITTLE_FLAG.jpg}" alt="" style="width: 60px;"></span> Applications </h2>
+        
       </div>
       <table class="table table-hover table-bordered align-middle">
         <thead class="table-danger">
@@ -27,7 +28,7 @@
             <th scope="col">Update</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-info">
           <tr th:each="applicationn : ${applications}">
             <th th:text="${applicationn.id}" scope="row"></th>
             <th th:text="${applicationn.applicant_dni}"></th>
