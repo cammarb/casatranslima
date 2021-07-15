@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/casatranslima
     username: postgres
-    password: fuck
+    password: password
   jpa:
     database: postgresql
     hibernate:
