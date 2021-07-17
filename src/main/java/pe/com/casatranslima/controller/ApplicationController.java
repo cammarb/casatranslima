@@ -70,11 +70,9 @@ public class ApplicationController {
 		try {
             applicationn.setHouse_name(houseName);
             applicationn.setStatus("PENDING");
+            applicationn.setHouse(houseName);
 			Application applicationReturn = applicationService.create(applicationn);
 			model.addAttribute("applicationn", applicationReturn);
-            houseName.setSpaces_available(houseName.getSpaces_available()-1);
-            House houseReturn = houseService.update(houseName);
-            model.addAttribute("house", houseReturn);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
