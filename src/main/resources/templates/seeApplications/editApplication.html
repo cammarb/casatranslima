@@ -16,7 +16,6 @@
   </div>
 
     <div class="container mt-5">
-      <div class="card-body">
         <form
           th:action="@{/seeApplications/save}"
           th:object="${editApplication}"
@@ -104,7 +103,6 @@
         <a th:href="@{/seeApplications}" class="btn lightBlue_btn">
           <i data-feather="corner-down-left"></i> Return
         </a>
-      </div>
     </div>
     <div th:insert="fragments/scripts.html :: scripts">
   </body>

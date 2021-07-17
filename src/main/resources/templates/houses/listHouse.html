@@ -27,51 +27,45 @@
         </div>
         <div class="row">
              <!-- SEARCH -->
-        <form class="d-flex" th:action="@{/houses}" method="get">
-            <input id="txtSearch" class="form-control me-2 rounded-2" type="search" placeholder="Search by district or name of the house"
-                aria-label="Search" name="keyword">
-            <button class="btn btn-outline-info white-font-hover rounded-2"
-                type="submit">Search</button>
-          </form>
+            <form class="d-flex" th:action="@{/houses}" method="get">
+                <input id="txtSearch" class="form-control me-2 rounded-2" type="search" placeholder="Search by district or name of the house"
+                    aria-label="Search" name="keyword">
+                <button class="btn btn-outline-info white-font-hover rounded-2"
+                    type="submit">Search</button>
+            </form>
         </div>
 
-        <section style="margin: 20px;">
-            <div class="row">
-
-                <div th:each="house : ${houses}" class="col-12 card-deck centerd" style="padding: 5px;">
-                    <div class="card mb-3 mx-auto" style="max-width: 600px;">
-                        <div class="row ">
-                          <div class="col-md-4">
-                            <img th:src="@{/../img/reviewHouse.png}" class="img-fluid rounded-start" alt="...">
-                          </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Name: <span th:text="${house.name}"></span></h5>
-                                    <ul>
-                                        <li class="card-text">Administrator's name: <span th:text="${house.admin}"></span></li>
-                                        <li class="card-text">Address: <span th:text="${house.address}"></span></li>
-                                        <li class="card-text">District: <span th:text="${house.district}"></span></li>
-                                        <li class="card-text">Phone: <span th:text="${house.phone}"></span></li>
-                                        <li class="card-text">Availability: <span th:text="${house.spaces_available}"></span></li>
-                                    </ul>
-                                </div>
-                                <div class="text-end mb-3 me-4">
-                                    <!-- EDIT -->
-                                    <a th:href="@{'/houses/' + ${house.id} + '/editHouse'}" class="btn btn-secondary me-2">
-                                        <i data-feather="edit"></i> Edit
-                                    </a>
-                                    <!-- DELETE -->
-                                    <a th:href="@{'/houses/' + ${house.id} + '/deleteHouse'}" class="btn btn-danger me-2"> <i
-                                            data-feather="delete"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
+        <div th:each="house : ${houses}" class="col-12 card-deck centerd" style="padding: 5px;">
+            <div class="card mb-3 mx-auto" style="max-width: 600px;">
+                <div class="row ">
+                    <div class="col-md-4">
+                    <img th:src="@{/../img/reviewHouse.png}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: <span th:text="${house.name}"></span></h5>
+                            <ul>
+                                <li class="card-text">Administrator's name: <span th:text="${house.admin}"></span></li>
+                                <li class="card-text">Address: <span th:text="${house.address}"></span></li>
+                                <li class="card-text">District: <span th:text="${house.district}"></span></li>
+                                <li class="card-text">Phone: <span th:text="${house.phone}"></span></li>
+                                <li class="card-text">Availability: <span th:text="${house.spaces_available}"></span></li>
+                            </ul>
+                        </div>
+                        <div class="text-end mb-3 me-4">
+                            <!-- EDIT -->
+                            <a th:href="@{'/houses/' + ${house.id} + '/editHouse'}" class="btn btn-secondary me-2">
+                                <i data-feather="edit"></i> Edit
+                            </a>
+                            <!-- DELETE -->
+                            <a th:href="@{'/houses/' + ${house.id} + '/deleteHouse'}" class="btn btn-danger me-2"> <i
+                                    data-feather="delete"></i> Delete
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </section>
+        </div>
     </div>
 
     <div th:insert="fragments/scripts.html :: scripts">

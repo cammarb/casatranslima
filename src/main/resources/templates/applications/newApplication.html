@@ -13,10 +13,8 @@
     </div>
     <div class="container mt-5">
         <div class="row">
-
             <div class="col">
-                <div class="card-body">
-                   
+               
                     <form th:action="@{/applications/savenew}"
                         th:object="${applicationNew}" method="post">
                      
@@ -61,7 +59,6 @@
 
                     <br> <a th:href="@{/applications}" class="btn lightBlue_btn"> <i data-feather="corner-down-left"></i> Return
                     </a>
-                </div>
                 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -8,53 +8,49 @@
     <nav th:insert="fragments/navbar.html :: navbar" class="sticky-top"></nav>
 
     <div class="position-relative overflow-hidden m-md-3 text-center header-bg-img">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <div class="col-md-5 mx-auto my-5">
           <h1 class="display-4 fw-normal title-text">Edit House</h1>
         </div>
     </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <div class="card-body">
+                <form th:action="@{/houses/save}" th:object="${houseEdit}" method="post">
+                    <div class="mb-3">
 
-                    <form th:action="@{/houses/save}" th:object="${houseEdit}" method="post">
-                        <div class="mb-3">
+                        <label for="name" class="form-label">Name</label> <input type="text" class="form-control"
+                            th:field="*{name}" placeholder="Name of the House" autofocus><br>
 
-                            <label for="name" class="form-label">Name</label> <input type="text" class="form-control"
-                                th:field="*{name}" placeholder="Name of the House" autofocus><br>
+                        <label for="district" class="form-label">District</label> <input type="text"
+                            class="form-control" th:field="*{district}" placeholder="District"><br>
 
-                            <label for="district" class="form-label">District</label> <input type="text"
-                                class="form-control" th:field="*{district}" placeholder="District"><br>
+                        <label for="address" class="form-label">Address</label> <input type="text" class="form-control"
+                            th:field="*{address}" placeholder="Address" autofocus><br>
 
-                            <label for="address" class="form-label">Address</label> <input type="text" class="form-control"
-                                th:field="*{address}" placeholder="Address" autofocus><br>
+                        <label for="admin" class="form-label">Administrator</label> <input type="text"
+                            class="form-control" th:field="*{admin}" placeholder="Administrator's name" autofocus><br>
 
-                            <label for="admin" class="form-label">Administrator</label> <input type="text"
-                                class="form-control" th:field="*{admin}" placeholder="Administrator's name" autofocus><br>
+                        <label for="phone" class="form-label">Telephone</label> <input type="text" class="form-control"
+                            th:field="*{phone}" placeholder="Telephone" autofocus><br>
 
-                            <label for="phone" class="form-label">Telephone</label> <input type="text" class="form-control"
-                                th:field="*{phone}" placeholder="Telephone" autofocus><br>
+                        <label for="spaces_available" class="form-label">Spaces Available</label> <input type="number" class="form-control"
+                        th:field="*{spaces_available}" placeholder="Availability" autofocus><br>
 
-                            <label for="spaces_available" class="form-label">Spaces Available</label> <input type="number" class="form-control"
-                            th:field="*{spaces_available}" placeholder="Availability" autofocus><br>
+                    </div>
 
-                        </div>
-
-                        <button type="submit" class="btn lightPink_btn">Save</button>
-                    </form>
-                    <br> <a th:href="@{/houses}" class="btn lightBlue_btn"> <i data-feather="corner-down-left"></i>
-                        Return
-                    </a>
-                </div>
-
+                    <button type="submit" class="btn lightPink_btn">Save</button>
+                </form>
+                <br> 
+                <a th:href="@{/houses}" class="btn lightBlue_btn"> <i data-feather="corner-down-left"></i>
+                    Return
+                </a>
             </div>
 
             <div class="col">
                 <img th:src="@{../../img/pride.png}" alt="" style="max-width: 700px;">
             </div>
         </div>
-</div>
-
+    </div>
 
     <div th:insert="fragments/scripts.html :: scripts">
 </body>
