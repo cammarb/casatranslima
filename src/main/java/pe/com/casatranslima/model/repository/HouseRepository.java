@@ -17,4 +17,7 @@ public interface HouseRepository extends JpaRepository<House, Long> {
     @Query(value = "SELECT * FROM houses WHERE house_name ILIKE %:keyword% OR district ILIKE %:keyword%", nativeQuery = true)
     List<House> findByKeyword(@Param("keyword") String keyword);
 
+    @Query(value = "SELECT * FROM houses WHERE spaces_available > 0", nativeQuery = true)
+    List<House> findBySpaces(Integer spaces);
+
 }

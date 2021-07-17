@@ -30,5 +30,8 @@ public class HouseServiceImpl implements HouseService {
     public List<House> findByKeyword(String keyword){
         return houseRepository.findByKeyword(keyword);
     }
-    
+
+    public List<House> findBySpaces(Integer spaces){
+        return houseRepository.findBySpaces(spaces);
+    }    
 }

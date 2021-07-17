@@ -30,14 +30,13 @@ public class ApplicationController {
     private ApplicationService applicationService;
 
     @GetMapping
-    public String listHouses(Model model, String keyword){
+    public String listHouses(Model model, String keyword, House houseSpace){
         try {
-            List<House> houses = houseService.getAll();
             if (keyword != null) {
                 model.addAttribute("houses", houseService.findByKeyword(keyword));
             }
             else{
-                model.addAttribute("houses", houses);
+                model.addAttribute("houses", houseService.findBySpaces(houseSpace.getSpaces_available()));
             } 
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,10 +72,14 @@ public class ApplicationController {
             applicationn.setStatus("PENDING");
 			Application applicationReturn = applicationService.create(applicationn);
 			model.addAttribute("applicationn", applicationReturn);
+            houseName.setSpaces_available(houseName.getSpaces_available()-1);
+            House houseReturn = houseService.update(houseName);
+            model.addAttribute("house", houseReturn);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
+        
 		return "redirect:/applications";
 	}
 }

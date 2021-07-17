@@ -35,7 +35,7 @@ public class House {
     private String phone;
 
     @Column(name = "spaces_available")
-    private Long spaces_available;
+    private Integer spaces_available;
 
     @OneToMany(mappedBy = "house", cascade = CascadeType.REMOVE)
 	private List<Application> applications;
@@ -44,7 +44,7 @@ public class House {
 
     }
 
-    public House(String name, String address, String district, String admin, String phone, Long spaces_available) {
+    public House(String name, String address, String district, String admin, String phone, Integer spaces_available) {
         super();
         this.name = name;
         this.address = address;
@@ -101,10 +101,10 @@ public class House {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public Long getSpaces_available() {
+    public Integer getSpaces_available() {
         return spaces_available;
     }
-    public void setSpaces_available(Long spaces_available) {
+    public void setSpaces_available(Integer spaces_available) {
         this.spaces_available = spaces_available;
     }
 

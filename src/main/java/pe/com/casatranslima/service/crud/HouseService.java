@@ -9,4 +9,5 @@ public interface HouseService extends CrudService<House, Long> {
     // public List<House> findByName(String name) throws Exception;
     
     public List<House> findByKeyword(String keyword) throws Exception;
+    public List<House> findBySpaces(Integer spaces) throws Exception;
 }
