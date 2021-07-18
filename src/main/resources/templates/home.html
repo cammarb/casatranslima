@@ -11,14 +11,13 @@
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item carousel-item-1 active">
-    
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1 class="fw-bolder">Casa Trans de Lima Este.</h1>
+                <h2 class="fw-bolder">We bring the home to you.</h2>
                 <h5 class="fw-bolder">"Our house is inclusive, we are not going to exclude anyone. Everyone and everyone is welcome, but mainly we are going to serve trans women" <br>- Vania</h5>
                 <p class="fw-bolder"> "Nuestra casa es inclusiva, no vamos a excluir a nadie.Todas y todos están bienvenidas, pero principalmente vamos a atender a mujeres trans“
                     </p>
@@ -30,19 +29,8 @@
     
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg lightPink_btn" href="#">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item carousel-item-3">
-    
-            <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg lightPink_btn" href="#">Browse gallery</a></p>
+                <h1 class="fw-bolder">Did you know that the main problem transgender people face is homelesness?</h1>
+                <a class="btn btn-lg lightPink_btn" href="#about">Learn more</a>
               </div>
             </div>
           </div>
@@ -57,15 +45,53 @@
         </button>
       </div>
 
-    <div class="container mt-5">
-
-
-        <div class="row">
-            <div class="col">
-                <img th:src="@{../../img/pride.png}" alt="" style="max-height: 50vh; width: auto;">
-            </div>
-            <div class="col"></div>
+    <div class="container mt-5 mb-5" id="about">
+        <div class="row mt-5 justify-content-center " >
+          <div class="col align-self-center">
+              <h1>
+                Trans people face homelesness because of the following reasons
+              </h1>
+              <br>
+              <ul>
+                <li>
+                  They get kicked out of their homes 
+                </li>
+                <li>
+                  They run away because of abusive circumstances
+                </li>
+                <li>
+                  They do not have access to work, therefore they cannot afford a home
+                </li>
+                <li>
+                  They face abuse and instances of transphobia at the hands of their tenants
+                </li>
+              </ul>
+          </div>
+          <div class="col align-self-center">
+            <img th:src="@{../../img/searchHouse.png}" alt="" style="width: inherit;">
+          </div>
         </div>
+        <div class="row justify-content-center mt-5">
+          <div class="col align-self-center">
+              <img th:src="@{../../img/pride.png}" alt="" style="max-height: 50vh; width: auto;">
+          </div>
+          <div class="col align-self-center">
+            <h1>Only 40% of Peruvians would hire a trans person.</h1>
+            <br>
+            <p >According to Universidad Peruana Cayetano Heredia, only 3% of this community can access a formal job. Due to the pandemic, their situation has become even more precarious. 
+            </p>
+          </div>
+      </div>
+      <div class="row justify-content-center mb-5">
+        <div class="col align-self-center">
+          <h1 class="text-center">How can you help?</h1>
+          <br>
+          <p class="text-center">
+            If you are an ally or part of the community, and can offer you home for transgender individuals get in touch with us!
+          </p>
+          <p class="text-center"><a class="btn btn-lg lightPink_btn text-center mx-auto" th:href="@{https://presente.pe/voluntariado/}">Contact Us</a></p>
+        </div>
+      </div>
     </div>
 
     <div th:insert="fragments/scripts.html :: scripts">

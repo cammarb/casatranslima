@@ -24,6 +24,12 @@ a {
   font-family: "Noto Sans", sans-serif !important;
 }
 
+p,
+li {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 2.5;
+}
+
 /* SEARCH BUTTON */
 .white-font-hover {
   border: solid 2px;
@@ -116,19 +122,12 @@ a {
   position: relative;
 }
 
-.carousel-item-3 {
-  background-image: url(./../img/header.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
 .carousel-caption h1,
 .carousel-caption h5,
+.carousel-caption h4,
 .carousel-caption p {
   color: white !important;
-  text-shadow: 0px 6px 11px rgba(0, 0, 0, 0.74);
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.89);
 }
 
 .header-bg-img {
